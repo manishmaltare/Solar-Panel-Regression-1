@@ -7,9 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1hdhJdzcF8OH0hQsjIYdkiF7AUfBvgyI-
 """
 
-# -*- coding: utf-8 -*-
-"""For Deployment Solar_Panel_Regression_Group_4.ipynb"""
-
 import numpy as np
 import pandas as pd
 import pickle
