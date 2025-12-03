@@ -1,0 +1,10 @@
+streamlit
+scikit-learn
+pandas
+numpy
+joblib
+streamlit
+nltk
+streamlit-lottie
+requests
+Pillow
