@@ -140,15 +140,22 @@ user_input = {}
 
 for i, feature in enumerate(df_features.columns):
     with cols[i % 3]:
-        user_input[feature] = st.number_input(
-            feature.replace("-", " ").title(),
-            value=float(df_features[feature].mean())
-        )
+
+        # ------- SPECIAL CASE: 15 decimal digits for distance-to-solar-noon -------
+        if feature == "distance-to-solar-noon":
+            user_input[feature] = st.number_input(
+                feature.replace("-", " ").title(),
+                value=float(df_features[feature].mean()),
+                format="%.15f"   # ← 15 decimal places
+            )
+
+        else:
+            user_input[feature] = st.number_input(
+                feature.replace("-", " ").title(),
+                value=float(df_features[feature].mean())
+            )
 
 st.markdown("</div>", unsafe_allow_html=True)
-
-user_df = pd.DataFrame([user_input])
-
 
 # =========================================================
 # APPLY SCALING BASED ON RULES
